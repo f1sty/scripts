@@ -1,4 +1,4 @@
-#!/usr/local/bin/elixir --no-halt
+#!/usr/bin/elixir --no-halt
 
 defmodule Reminder do
   @moduledoc """
