@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo $1 | tr '[:upper:]' '[:lower:]' | sed -E 's/[[:space:]]/-/g; s/[-]+/-/g'
+
