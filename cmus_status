@@ -11,5 +11,5 @@ if ps -C cmus > /dev/null; then
         awk '{gsub("tag title ", "");print}'`
     stream=$(cmus-remote -Q | grep --text '^stream' | sed -e 's/stream //')
 
-        echo "$stream $artist - $title"; else echo "⏹";
+        echo "$stream $artist - $title"; else echo " []";
 fi
