@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+notes_dir=${HOME}/media/docs/personal/notes
+note_id=$(date '+%Y%m%d%H%M%S')
+
+vim "$notes_dir/$note_id.md"

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+while true
+do
+  cpu=$(sensors -u |grep temp1|head -1|cut -d':' -f 2| sed 's/ //')
+  core1=$(sensors -u |grep temp2|head -1|cut -d':' -f 2| sed 's/ //')
+  core2=$(sensors -u |grep temp3|head -1|cut -d':' -f 2| sed 's/ //')
+  rrdtool update temps.rrd N:${cpu}:${core1}:${core2}
+  sleep 60
+done
+
+# rrdtool graph temp_graph.png -w 720 -h 480 -a PNG --start -500 --vertical-label "temperature (°C)" DEF:cpu=temps.rrd:cpu:MAX DEF:core1=temps.rrd:core1:MAX DEF:core2=temps.rrd:core2:MAX LINE1:cpu#ff0000:"cpu" LINE1:core1#00ff00:"core1" LINE1:core2#0000ff:"core2"
