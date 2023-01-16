@@ -251,6 +251,7 @@ __git_ps1_colorize_gitstring ()
 	if [[ -n ${ZSH_VERSION-} ]]; then
 		local c_red='%F{red}'
 		local c_green='%F{green}'
+		local c_yellow='%F{yellow}'
 		local c_lblue='%F{blue}'
 		local c_clear='%f'
 	else
@@ -258,11 +259,12 @@ __git_ps1_colorize_gitstring ()
 		# issues with command line editing/browsing/completion!
 		local c_red='\[\e[31m\]'
 		local c_green='\[\e[32m\]'
+		local c_yellow='\[\e[33m\]'
 		local c_lblue='\[\e[1;34m\]'
 		local c_clear='\[\e[0m\]'
 	fi
 	local bad_color=$c_red
-	local ok_color=$c_green
+	local ok_color=$c_yellow
 	local flags_color="$c_lblue"
 
 	local branch_color=""
@@ -275,7 +277,7 @@ __git_ps1_colorize_gitstring ()
 
 	z="$c_clear$z"
 	if [ "$w" = "*" ]; then
-		w="$bad_color$w"
+		w="$flags_color$w"
 	fi
 	if [ -n "$i" ]; then
 		i="$ok_color$i"
@@ -540,7 +542,7 @@ __git_ps1 ()
 		   [ "$(git config --bool bash.showUntrackedFiles)" != "false" ] &&
 		   git ls-files --others --exclude-standard --directory --no-empty-directory --error-unmatch -- ':/*' >/dev/null 2>/dev/null
 		then
-			u="%${ZSH_VERSION+%}"
+			u="%F{blue}%${ZSH_VERSION+%}%f"
 		fi
 
 		if [ -n "${GIT_PS1_COMPRESSSPARSESTATE-}" ] &&
