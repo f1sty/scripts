@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 notes_dir=${HOME}/media/docs/personal/notes
+
+[ ! -d $notes_dir ] && mkdir -p $notes_dir
+
 # note_id=$(date '+%Y%m%d%H%M%S')
 note_id=$(date '+%F')
 
