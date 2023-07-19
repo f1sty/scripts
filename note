@@ -8,4 +8,4 @@ notes_dir=${HOME}/media/docs/personal/notes
 note_id=$(date '+%F')
 
 # vim "+g/## \d\d:\d\d\n\n\%$/d3" "+norm G2o" "+norm i## $(date +%H:%M)" "+g/\%^\n/d2" "+norm G2o" "+startinsert" "$notes_dir/$note_id.md"
-vim "+norm G2o" "+norm i## $(date +%H:%M)" "+g/\%^\n/d2" "+norm G2o" "+startinsert" "$notes_dir/$note_id.md"
+$EDITOR "+norm G2o" "+norm i## $(date +%H:%M)" "+g/\%^\n/d2" "+norm G2o" "+startinsert" "$notes_dir/$note_id.md"
