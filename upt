@@ -1,3 +1,0 @@
-#!/bin/env bash
-
-pico2wave -w /tmp/test.wav "$(uptime -p)" 2&>/dev/null; aplay /tmp/test.wav 2&>/dev/null && rm /tmp/test.wav

@@ -1,4 +1,0 @@
-#!/usr/bin/env sh
-
-echo "$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits)°C"
-# nvidia-smi --display=TEMPERATURE -q | rg Current | cut -d':' -f 2 | head -1 | sed -e 's/\s//' | sed -e 's/ C/°C/'
