@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-ping -c1 8.8.8.8 &> /dev/null
+ping -c 1 8.8.8.8 &> /dev/null
 while [[ $? -ne 0 ]]; do
-    echo "Checking connection"
-    ping -c1 8.8.8.8 &> /dev/null
+    echo -ne "still offline\b\b\b\b\b\b\b\b\b\b\b\b\b"
+    ping -c 1 8.8.8.8 &> /dev/null
 done
 
-mpv $HOME/downloads/bell.wav
+mpv /home/f1sty/downloads/ding.mp3 &
