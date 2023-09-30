@@ -13,3 +13,4 @@ mkdir -p $DOTFILES
 cd $DOTFILES
 git clone --bare $DOTFILES_REPO dotfiles
 dotfiles config status.showUntrackedFiles no
+dotfiles switch main
