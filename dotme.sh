@@ -2,15 +2,16 @@
 
 set -xe
 
-DOTFILES="$HOME/pkgs"
-DOTFILES_REPO="https://github.com/f1sty/dotfiles"
+PKG_DIR="$HOME/pkgs"
+DOTFILES_REPO="git@github.com:f1sty/dotfiles"
 
 function dotfiles() {
-  git --git-dir=$DOTFILES/dotfiles --work-tree=$HOME "$@"
+  git --git-dir=$PKG_DIR/dotfiles --work-tree=$HOME "$@"
 }
 
-mkdir -p $DOTFILES
-cd $DOTFILES
+mkdir -p $PKG_DIR
+cd $PKG_DIR
 git clone --bare $DOTFILES_REPO dotfiles
+
 dotfiles config status.showUntrackedFiles no
 dotfiles switch main
