@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-mpv_args='--volume=50 --title="radio-mpv"'
+mpv_args='--volume=70 --title="radio-mpv"'
 options=(
     "Quit"
     "Lofi Girl | https://play.streamafrica.net/lofiradio"
@@ -31,7 +31,7 @@ play_station() {
 
     echo "$title -- $url"
     pkill -f radio-mpv || echo "radio-mpv not running"
-    dunstify "set station: " "$title" -i mpv
+    dunstify -i devices/audio-speakers "set station" "$title"
     mpv $mpv_args $url
 }
 
@@ -39,7 +39,7 @@ choice=$(menu "${options[@]/%/\\n}" | rofi -dmenu) || exit
 
 case $choice in
     quit)
-        dunstify "Closing rofi-radio" "Good-bye!" -i mpv
+        dunstify -i devices/audio-speakers "closing radio" "bye-bye!"
         pkill -f radio-mpv
         exit
         ;;
