@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rofi -modi drun,run,ssh -show drun
+rofi -show combi
