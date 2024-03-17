@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-xrandr --output eDP-1 --brightness $1
+monitor=$(xrandr --listmonitors | tail -1 | cut -d' ' -f6)
+xrandr --output $monitor --brightness $1
