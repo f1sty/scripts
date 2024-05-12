@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Copyright © 2023 Yurii <f1sty> Skrynnykov. All Rights Reserved.
+# screen and backlit brightness sctipt for MacBook Pro 16
 
 KBD_BACKLIGHT="/sys/class/leds/:white:kbd_backlight"
 SCREEN_BACKLIGHT="/sys/class/backlight/gmux_backlight"

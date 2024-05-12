@@ -6,4 +6,4 @@ while [[ $? -ne 0 ]]; do
     ping -c 1 8.8.8.8 &> /dev/null
 done
 
-mpv /home/f1sty/downloads/ding.mp3 &
+mpv /home/f1sty/downloads/ding.mp3

@@ -4,5 +4,5 @@ case $1 in
   off)
     xset dpms force standby;;
   *)
-    echo "subcommnds: off";;
+    echo "commands: off";;
 esac
