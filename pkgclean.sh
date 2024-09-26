@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-pacman -Rsn $(pacman -Qdtq)
+sudo pacman -Rsn $(pacman -Qdtq)
