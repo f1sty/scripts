@@ -2,7 +2,7 @@
 
 set -xe
 
-PKG_DIR="$HOME/pkgs"
+PKG_DIR="$1"
 DOTFILES_REPO="git@github.com:f1sty/dotfiles"
 
 function dotfiles() {
