@@ -6,9 +6,8 @@ function new_session() {
   tmux new-window -n test
   tmux new-window -n cmd
   tmux new-window -n aux
-  tmux send-keys -t "base:coding" "cd $(pass work/directory)" Enter
-  tmux send-keys -t "base:dbg" "cd $(pass work/directory)" Enter
-  tmux send-keys -t "base:test" "cd $(pass work/directory)" Enter
+  tmux send-keys -t "base:coding" "cd ~/coding" Enter
+  tmux send-keys -t "base:dbg" "cd ~/coding" Enter
   tmux select-window -t "base:coding"
   tmux attach-session -d
 }
