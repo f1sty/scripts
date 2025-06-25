@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 function new_session() {
-  tmux new-session -d -n coding -s base
+  tmux new-session -d -n cmd -s base
+  tmux new-window -n coding
   tmux new-window -n dbg
   tmux new-window -n test
-  tmux new-window -n cmd
   tmux new-window -n aux
   tmux send-keys -t "base:coding" "cd ~/programming; clear" Enter
   tmux send-keys -t "base:dbg" "cd ~/programming; clear" Enter
-  tmux select-window -t "base:coding"
+  tmux select-window -t "base:cmd"
   tmux attach-session -d
 }
 
