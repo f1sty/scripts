@@ -2,7 +2,7 @@
 
 function new_session() {
   tmux new-session -d -n cmd -s base
-  tmux new-window -n coding
+  tmux new-window -n dev
   tmux new-window -n dbg
   tmux new-window -n test
   tmux new-window -n aux
