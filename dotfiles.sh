@@ -2,16 +2,11 @@
 
 set -xe
 
-PKG_DIR="$1"
-DOTFILES_REPO="git@github.com:f1sty/dotfiles"
+local repo="git@git.sr.ht:~f1sty/dotfiles"
+local dotfiles_dir=".dotfiles"
 
-function dotfiles() {
-  git --git-dir=$PKG_DIR/dotfiles --work-tree=$HOME "$@"
-}
+cd $HOME
+git clone ${repo} ${dotfiles_dir}
+cd ${dotfiles_dir}
 
-mkdir -p $PKG_DIR
-cd $PKG_DIR
-git clone --bare $DOTFILES_REPO dotfiles
-
-dotfiles config status.showUntrackedFiles no
-dotfiles switch --force main
+[[ -x "/usr/bin/stow" ]] && stow .
