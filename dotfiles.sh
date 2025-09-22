@@ -2,10 +2,10 @@
 
 set -xe
 
-local repo="git@git.sr.ht:~f1sty/dotfiles"
-local dotfiles_dir=".dotfiles"
+repo="git@git.sr.ht:~f1sty/dotfiles"
+dotfiles_dir=".dotfiles"
 
-cd $HOME
+cd "$HOME"
 git clone ${repo} ${dotfiles_dir}
 cd ${dotfiles_dir}
 

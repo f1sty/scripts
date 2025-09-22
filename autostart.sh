@@ -7,8 +7,10 @@
 # -s "/usr/bin/waybar 2>logile"
 # -s "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1" \
 # -s "waybar-dwl.sh"
-systemctl --user start ydotool
-dunst &
-foot --server &
-swaybg --image ~/media/images/wallpapers/lanterns.jpg --mode stretch &
-waybar
+wl-paste --watch cliphist store &
+# systemctl --user start ydotool
+# dunst &
+# foot --server &
+# swaybg --image ~/media/images/wallpapers/lanterns.jpg --mode stretch &
+wbg ~/media/images/wallpapers/noshit.jpg &
+yambar

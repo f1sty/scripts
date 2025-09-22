@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-mpv_args='--volume=100 --title="radio-mpv" --no-terminal'
+mpv_args=(--volume=100 --title="radio-mpv" --no-terminal)
 options=(
   "LofiGirl"
   "Chillhop"
@@ -30,12 +30,12 @@ play_station() {
     echo "$1 -- $2"
     pkill -f radio-mpv || echo "radio-mpv not running"
     notify-send "set station: " "$1" -i mpv
-    mpv $mpv_args $2 &
+    mpv "${mpv_args[@]}" "$2" &
 }
 
 PS3="choose station: "
 
-select option in ${options[*]}
+select option in "${options[@]}"
 do
   case "$option" in
     "Quit")
@@ -44,7 +44,7 @@ do
       ;;
     "Background") break
       ;;
-    *) play_station $option ${stations[$REPLY - 1]}
+    *) play_station "$option" "${stations[$REPLY - 1]}"
       ;;
   esac
 done

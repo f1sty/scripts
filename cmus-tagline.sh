@@ -2,7 +2,7 @@
 
 output=$(cmus-remote -Q 2>/dev/null)
 
-readarray -t tagline <<< $output
+readarray -t tagline <<< "$output"
 playing_status=${tagline[0]}
 
 case $playing_status in
@@ -21,25 +21,25 @@ case $playing_status in
 esac
 
 for line in "${tagline[@]}"; do
-  args=($line)
+  args=("$line")
   case $line in
     *tracknumber*)
       tracknumber=${args[2]}
       ;;
     *title*)
-      title=${args[@]:2}
+      title=${args[*]:2}
       ;;
     *artist*)
-      artist=${args[@]:2}
+      artist=${args[*]:2}
       ;;
     *album*)
-      album=${args[@]:2}
+      album=${args[*]:2}
       ;;
     *date*)
       date=${args[2]}
       ;;
     *comment*)
-      comment=${args[@]:2}
+      comment=${args[*]:2}
       ;;
   esac
 done
