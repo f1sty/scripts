@@ -1,16 +1,5 @@
 #!/usr/bin/env sh
-# export XDG_RUNTIME_DIR=/tmp/xdg-runtime-$(id -u)
-# mkdir -p $XDG_RUNTIME_DIR
-# exec dbus-run-session -- dwl -s "autostart.sh"
-# -s "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP" \
-# -s "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP" \
-# -s "/usr/bin/waybar 2>logile"
-# -s "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1" \
-# -s "waybar-dwl.sh"
+
 wl-paste --watch cliphist store &
-# systemctl --user start ydotool
-# dunst &
-# foot --server &
-# swaybg --image ~/media/images/wallpapers/lanterns.jpg --mode stretch &
-wbg ~/media/images/wallpapers/noshit.jpg &
+wbg ~/media/images/wallpapers/train.jpg &
 yambar
