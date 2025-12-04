@@ -1,5 +1,32 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-# amixer get Master | tail -1 | cut -d' ' -f7 | sed -e 's/[][]//g'
-# pamixer --get-volume-human
-pactl get-sink-volume 0 | head -1 | cut -d'/' -f2,4 | sed 's/\s//g' | tr -d '\n'
+up () {
+  wpctl set-volume @DEFAULT_SINK@ 2%+
+}
+
+down () {
+  wpctl set-volume @DEFAULT_SINK@ 2%-
+}
+
+mute () {
+  wpctl set-mute @DEFAULT_SINK@ toggle
+}
+
+usage () {
+  echo "Usage: $0 <up/down/mute>"
+}
+
+case "$1" in
+  up)
+    up
+    ;;
+  down)
+    down
+    ;;
+  mute)
+    mute
+    ;;
+  *)
+    usage
+    ;;
+esac

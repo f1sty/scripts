@@ -1,4 +1,25 @@
 #!/usr/bin/env bash
 
-monitor=$(xrandr --listmonitors | tail -1 | cut -d' ' -f6)
-xrandr --output "$monitor" --brightness "$1"
+up () {
+  brightnessctl set 5%+
+}
+
+down () {
+  brightnessctl set 5%-
+}
+
+usage () {
+  echo "Usage: $0 <up/down>"
+}
+
+case "$1" in
+  up)
+    up
+    ;;
+  down)
+    down
+    ;;
+  *)
+    usage
+    ;;
+esac
