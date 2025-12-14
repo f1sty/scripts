@@ -6,8 +6,8 @@ function new_session() {
   tmux new-window -n dbg
   tmux new-window -n test
   tmux new-window -n aux
-  tmux send-keys -t "base:dev" "cd ~/dev; clear" Enter
-  tmux send-keys -t "base:dbg" "cd ~/dev; clear" Enter
+  # tmux send-keys -t "base:dev" "cd ~/dev; clear" Enter
+  # tmux send-keys -t "base:dbg" "cd ~/dev; clear" Enter
   tmux select-window -t "base:cmd"
   tmux attach-session -d
 }
